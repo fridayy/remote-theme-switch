@@ -1,18 +1,19 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.fridayy.remotethemeswitch</id>
+    <id>com.github.fridayy.rts</id>
     <name>remote-theme-switch</name>
     <vendor>fridayy</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.fridayy.remotethemeswitch.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.fridayy.remotethemeswitch.services.MyProjectService"/>
+        <httpRequestHandler implementation="com.github.fridayy.rts.RemoteThemeSwitchHandler"/>
     </extensions>
 
+    <extensionPoints>
+
+    </extensionPoints>
+
     <applicationListeners>
-        <listener class="com.github.fridayy.remotethemeswitch.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
 </idea-plugin>
